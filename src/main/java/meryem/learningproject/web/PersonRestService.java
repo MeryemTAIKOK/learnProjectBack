@@ -7,13 +7,9 @@ import meryem.learningproject.entities.Person;
 import meryem.learningproject.entities.PersonForm;
 import meryem.learningproject.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -55,22 +51,7 @@ public class PersonRestService {
         return personService.updatePers(personId,person2);
     }
 
-//,consumes = MediaType.APPLICATION_JSON_VALUE
-  //  @PostMapping(value ="/persons",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    //public Person addPerson(@ModelAttribute  Person person) {
-//@PostMapping(value ="/persons",consumes = MediaType.APPLICATION_JSON_VALUE)
-//public Person addPerson(@RequestBody  Person person) {
 
-      /*  System.out.println(person.getFirstName());
-        System.out.println(person.getFamilyName());
-        System.out.println(person.getAge());
-        System.out.println(person.getCountry());
-        System.out.println(person.getJobTitle());
-        System.out.println(person.getPhoneNumber());
-        System.out.println(person.getLen());
-        System.out.println(person.getFirstName());
-        return personService.addPerson(person);
-    }*/
 
     @PostMapping(value ="/persons")
     public Person addPerson(@RequestParam("person")String person) throws JsonMappingException, JsonProcessingException, IOException {

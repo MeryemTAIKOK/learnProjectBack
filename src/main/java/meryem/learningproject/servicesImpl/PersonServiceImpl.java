@@ -40,7 +40,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Person updatePers(Long idPers, Person pers) {
         if(!idPers.equals(pers.getPersonId())) {
-            throw new HttpClientErrorException(HttpStatus.CONFLICT, "The specified 'id' in the IRI doesn't equal the ID related to the article that you want to update ");
+            throw new HttpClientErrorException(HttpStatus.CONFLICT, "The specified 'id' in the IRI doesn't equal the ID related to the person that you want to update ");
         }
 
         Optional<Person> ad=perJpaRepository.findById(idPers);
